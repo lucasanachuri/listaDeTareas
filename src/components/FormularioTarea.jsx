@@ -4,10 +4,18 @@ import { useState } from "react";
 
 const FormularioTarea = () => {
   const { tarea, setTarea } = useState("");
-  const [listaTareas, setListaTareas] = useState9([]);
+  const [listaTareas, setListaTareas] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //guardar la tarea en el array listaTareas
+    setListaTareas([...listaTareas, tarea]);
+    //limpiar el value del imput
+    setTarea("");
+  };
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3 d-flex" controlId="tarea">
           <Form.Control
             type="text"
