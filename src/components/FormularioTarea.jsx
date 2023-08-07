@@ -26,7 +26,7 @@ const FormularioTarea = () => {
           <Button variant="primary">Agregar</Button>
         </Form.Group>
       </Form>
-      <ListaTareas></ListaTareas>
+      <ListaTareas propslistaTareas={listaTareas}></ListaTareas>
     </>
   );
 };
